@@ -1,0 +1,68 @@
+@import "../_mixin";
+.home {
+    background: linear-gradient(rgba(50,50,50,1) 0%, rgba(198,81,70,1));
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    align-items: center;
+    @include center;
+}
+
+// h1 {
+    
+//     @include title-text;
+//     text-transform: uppercase;
+// }
+
+
+.title{
+    @include text-contain;
+    @include center;
+    height: 200px;
+
+    h1{
+        @include title-text;
+        text-transform: uppercase;
+    }
+}
+
+.pulse-button{
+    height: 275px;
+    @include center;
+
+    .shapes {
+        @include center;
+        
+        .circle1 {
+            @include center;
+            margin: auto 0;
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            25% { background-color: rgba(255,255,255,.1); box-shadow: 0px 0px 0px 30px rgba(255,255,255,0), 0px 0px 0px 50px rgba(255,255,255,0), 0px 0px 0px 70px rgba(255,255,255,.1); }
+
+            50% { background-color: rgba(255,255,255,.1); box-shadow: 0px 0px 0px 30px rgba(255,255,255,0), 0px 0px 0px 50px rgba(255,255,255,.1), 0px 0px 0px 70px rgba(255,255,255,0); }
+
+            75% { background-color: rgba(255,255,255,.1); box-shadow: 0px 0px 0px 30px rgba(255,255,255,.1), 0px 0px 0px 50px rgba(255,255,255,0), 0px 0px 0px 30px rgba(255,255,255,0); }
+
+            100% { background-color: rgba(255,255,255,.1); box-shadow: 0px 0px 0px 30px rgba(255,255,255,0), 0px 0px 0px 0px rgba(255,255,255,0), 0px 0px 0px 0px rgba(255,255,255,0); }
+        }
+    }
+}
+
+.footer{
+    @include text-contain;
+    @include center;
+
+    p {
+        font-family: 'Roboto', sans-serif;
+        font-size: 2.7rem;
+        font-weight: 100;
+        text-align: center;
+    }
+}

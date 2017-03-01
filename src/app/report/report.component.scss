@@ -1,0 +1,54 @@
+@import "../_mixin";
+
+.report {
+    @include center;
+    align-items: center;
+    flex-direction: column;
+
+    .title {
+        flex-direction: column;
+        line-height: 1.2;
+        @include center;
+        @include text-contain;
+        margin-bottom: 20px;
+        
+        h1 {
+            @include title-text;
+        }
+
+        p {
+            @extend h1;
+            font-size: 1.5rem;
+        }
+    }
+
+    .alien-info {
+        width: 90%;
+        height: 250px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+
+        select {
+            @include dropdown;
+            -webkit-appearance: none;
+        }
+
+        textarea {
+           color: red;
+        }
+        ::placeholder {
+            color: red;
+            font-size: 1.3rem;
+        }
+
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+        @include center;
+        @include title-text;
+        @include text-contain;
+    }
+}

@@ -1,0 +1,27 @@
+@mixin center {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin text-contain {
+    height: 100px;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+@mixin title-text{
+    font-size: 2.9rem;
+    font-weight: 100;
+    text-transform: capitalize;
+}
+
+@mixin dropdown{
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid white;
+    background: 0 0;
+    color: #c0392b;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    border-radius: 0;
+}
