@@ -1,6 +1,6 @@
 @import "../_mixin";
 .home {
-    background: linear-gradient(rgba(50,50,50,1) 0%, rgba(198,81,70,1));
+    background: linear-gradient(rgba(50,50,50,1) 10%, rgba(187, 155, 113, 1));
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -19,7 +19,6 @@
 .title{
     @include text-contain;
     @include center;
-    height: 200px;
 
     h1{
         @include title-text;
@@ -44,13 +43,13 @@
         }
 
         @keyframes pulse {
-            25% { background-color: rgba(255,255,255,.1); box-shadow: 0px 0px 0px 30px rgba(255,255,255,0), 0px 0px 0px 50px rgba(255,255,255,0), 0px 0px 0px 70px rgba(255,255,255,.1); }
+            25% { background-color: rgba(255,255,255,.05); box-shadow: 0px 0px 0px 30px rgba(255,255,255,0), 0px 0px 0px 50px rgba(255,255,255,0), 0px 0px 0px 70px rgba(255,255,255,.05); }
 
-            50% { background-color: rgba(255,255,255,.1); box-shadow: 0px 0px 0px 30px rgba(255,255,255,0), 0px 0px 0px 50px rgba(255,255,255,.1), 0px 0px 0px 70px rgba(255,255,255,0); }
+            50% { background-color: rgba(255,255,255,.05); box-shadow: 0px 0px 0px 30px rgba(255,255,255,0), 0px 0px 0px 50px rgba(255,255,255,.05), 0px 0px 0px 70px rgba(255,255,255,0); }
 
-            75% { background-color: rgba(255,255,255,.1); box-shadow: 0px 0px 0px 30px rgba(255,255,255,.1), 0px 0px 0px 50px rgba(255,255,255,0), 0px 0px 0px 30px rgba(255,255,255,0); }
+            75% { background-color: rgba(255,255,255,.05); box-shadow: 0px 0px 0px 30px rgba(255,255,255,.05), 0px 0px 0px 50px rgba(255,255,255,0), 0px 0px 0px 0px rgba(255,255,255,0); }
 
-            100% { background-color: rgba(255,255,255,.1); box-shadow: 0px 0px 0px 30px rgba(255,255,255,0), 0px 0px 0px 0px rgba(255,255,255,0), 0px 0px 0px 0px rgba(255,255,255,0); }
+            100% { background-color: rgba(255,255,255,.05); box-shadow: 0px 0px 0px 30px rgba(255,255,255,0), 0px 0px 0px 0px rgba(255,255,255,0), 0px 0px 0px 0px rgba(255,255,255,0); }
         }
     }
 }

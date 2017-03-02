@@ -31,7 +31,9 @@
 
         select {
             @include dropdown;
+            width: 100%;
             -webkit-appearance: none;
+            margin-bottom: 25px;
         }
 
         textarea {

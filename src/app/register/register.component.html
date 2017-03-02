@@ -1,19 +1,22 @@
-<div class="title">
-	<p>register</p>
-</div>
+<div class="register">
+	<div class="title">
+		<p>register</p>
+	</div>
 
-<div class="select-options">
-	<input type="text" placeholder="Name" name="name" value="" required>
-	<input type="text" placeholder="Age" name="age" value="" required>
-	<select name="selectoccupation" required>
-		<option value="selectoccupation">select occupation</option>
-		<option value="ailenhunter">alien hunter</option>
-		<option value="yogateacher">yoga teacher</option>
-		<option value="dustfarmer">dust farmer</option>
-		<option value="frontenddeveloper">front-end developer</option>
-  	</select>
-</div>
-
-<div class="title">
-	<a routerLink="/encounters"> check in </a>
+	<form [formGroup]="registerForm" 
+			class="register-form"
+			[ngClass]="{'submitting': submitting}"
+			(ngSubmit)="postNewColonist($event)">
+		<fieldset class="select-options">
+			<input type="text" placeholder="Name" formControlName="name" name="colonistName">
+			<input type="number" placeholder="Age" formControlName="age" name="colonistAge">
+			<select formControlName="job_id" name="job_id">
+				<option value="">select occupation</option>
+				<option *ngFor="let job of marsJobs" value="{{job.id}}">{{job.name}}</option>
+			</select>
+		</fieldset>
+		<fieldset class="title">
+			<button>Check in</button>
+		</fieldset>
+	</form>
 </div>

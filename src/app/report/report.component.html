@@ -4,21 +4,17 @@
 		<p>Safey on Mars is your responcibility</p>
 	</div>
 
-	<div class="alien-info">
-		<select name="selectalientype" required="required">
-			<option value="selectalientype">select alien type</option>
-			<option value="specialk">Special K</option>
-			<option value="endomorph">Endomorph</option>
-			<option value="endomorph">Endomorph</option>
-			<option value="octospider">Octospider</option>
-			<option value="thepredator">The Predator</option>
-			<option value="darthvader">Darth Vader</option>
-			<option value="donaldtrump">Donald Trump</option>
-			<option value="yoda">Yoda</option>
-		</select>
-		<textarea placeholder="Action Taken.." rows="15" cols="50" required></textarea>
-	</div>
+	<form [formGroup]="reportForm" [ngClass]={invalid:reportForm.invalid}>
+		<fieldset class="alien-info">
+			<select name="selectalientype" required="required">
+				<option value="">Select alien type</option>
+				<option *ngFor="let Alien of marsAliens" value={{Alien.id}}> {{Alien.type}} </option>
+			</select>
+			<textarea placeholder="Action Taken.." rows="15" cols="50" formControlName="action" name="action" required></textarea>
+		</fieldset>
+	</form>
 
+	<button type="button" (click)="logEncounter()" >submit report</button>
 	<a routerLink="/encounters" class="submit-button">submit report</a>
 
 
