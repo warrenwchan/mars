@@ -1,9 +1,12 @@
 @import "../_mixin";
+@import "../_variables";
 
 .report {
-    @include center;
+    height: 100vh;
+    background: linear-gradient(rgba(50,50,50,1) 10%, rgba(187, 155, 113, 1));
     align-items: center;
     flex-direction: column;
+    @include center;
 
     .title {
         flex-direction: column;
@@ -20,11 +23,20 @@
             @extend h1;
             font-size: 1.5rem;
         }
+
+        button {
+            text-decoration: none;
+            color: white;
+            margin: 0 auto;
+            @include title-text;
+        }
+    }
+
+    form{
+        width: 90%;
     }
 
     .alien-info {
-        width: 90%;
-        height: 250px;
         display: flex;
         justify-content: space-between;
         flex-direction: column;
@@ -37,20 +49,19 @@
         }
 
         textarea {
-           color: red;
+            width: 100%;
+            color: #3769A5;
+            font-size: 1.3rem;
+            resize: none;
+
         }
         ::placeholder {
-            color: red;
-            font-size: 1.3rem;
+            @extend textarea;
         }
-
     }
-
-    a {
-        text-decoration: none;
-        color: white;
-        @include center;
-        @include title-text;
-        @include text-contain;
+    
+    .submitting .ng-invalid {
+        animation: alert .5s infinite;
+        @include alert;
     }
 }

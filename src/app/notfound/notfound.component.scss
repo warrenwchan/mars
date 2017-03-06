@@ -1,1 +1,15 @@
 @import "../_mixin";
+@import "../_variables";
+
+body {
+    height: 100vh;
+    background: linear-gradient(rgba(50,50,50,1) 10%, rgba(187, 155, 113, 1));
+    align-items: center;
+    flex-direction: column;
+    @include center;
+}
+
+h1 {
+    font-family: $main-font;
+    @include title-text;
+}

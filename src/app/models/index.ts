@@ -22,12 +22,12 @@ export class NewColonist {
 
 export class NewEncounter {
     atype: string;
-    date: number;
+    date: string;
     action: string;
     colonist_id: string;
     constructor(
         atype: string,
-        date: number,
+        date: string,
         action: string,
         colonist_id: string
     )

@@ -1,3 +1,5 @@
+@import "_variables";
+
 @mixin center {
     display: flex;
     justify-content: center;
@@ -6,7 +8,7 @@
 @mixin text-contain {
     height: 100px;
     align-items: center;
-    font-family: 'Roboto', sans-serif;
+    font-family: $main-font;
 }
 
 @mixin title-text{
@@ -28,7 +30,7 @@
 
 @mixin alert {
      @keyframes alert {
-        0% { box-shadow: 0px 0px 0px 0px rgba(255,0,0,.5); }
+        0% { box-shadow: 0px 0px 0px 0px rgba(81, 157, 158, .5); }
         100% { box-shadow: 0px 0px 0px 15px rgba(255,0,0,0); }
      }
 }

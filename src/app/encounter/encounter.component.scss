@@ -1,4 +1,5 @@
 @import "../_mixin";
+@import "../_variables";
 
 .encounter {
     height: 100vh;
@@ -20,13 +21,20 @@
             color: black;
             font-weight: 100;
             font-size: 1.5rem;
+            text-transform: capitalize;
         }
     }
-    .report {
+    .encounter-page {
+        padding: 20px;
         height: 370px;
         overflow-y: scroll;
-        p {
-            color: black;
+        color: black;
+        font-family: $main-font;
+        font-size: 1.5rem;
+        font-weight: 100;
+
+        li{
+            padding-bottom: 20px;
         }
     }
     .footer {

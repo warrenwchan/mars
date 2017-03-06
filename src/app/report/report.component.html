@@ -4,18 +4,19 @@
 		<p>Safey on Mars is your responcibility</p>
 	</div>
 
-	<form [formGroup]="reportForm" [ngClass]={invalid:reportForm.invalid}>
+	<form [formGroup]="reportForm" 
+			class="report-form"
+			[ngClass]="{'submitting': clickedButton}"
+			(ngSubmit)="postNewEncounter($event)">
 		<fieldset class="alien-info">
-			<select name="selectalientype" required="required">
+			<select formControlName="atype" name="atype">
 				<option value="">Select alien type</option>
-				<option *ngFor="let Alien of marsAliens" value={{Alien.id}}> {{Alien.type}} </option>
+				<option *ngFor="let alien of marsAliens" value={{alien.type}}> {{alien.type}} </option>
 			</select>
-			<textarea placeholder="Action Taken.." rows="15" cols="50" formControlName="action" name="action" required></textarea>
+			<textarea placeholder="Action Taken.." rows="15" cols="50" formControlName="action" name="action"></textarea>
+		</fieldset>
+		<fieldset class="title">
+			<button>Submit report</button>
 		</fieldset>
 	</form>
-
-	<button type="button" (click)="logEncounter()" >submit report</button>
-	<a routerLink="/encounters" class="submit-button">submit report</a>
-
-
 </div>

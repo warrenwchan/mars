@@ -1,9 +1,14 @@
 @import "../_mixin";
+@import "../_variables";
 
 .register {
     height: 100vh;
     background: linear-gradient(rgba(50,50,50,1) 10%, rgba(187, 155, 113, 1));
-    @include alert;
+
+    .submitting.ng-invalid{
+        animation: alert .5s infinite;
+        @include alert;
+    }
 }
 
 .title {
@@ -19,6 +24,10 @@
         text-decoration: none;
         color: white;
         margin: 0 auto;
+    }
+    a{
+        color: white;
+        text-decoration: none;
     }
 }
 
@@ -38,10 +47,7 @@
         font-size: 1.5rem;
         text-transform: capitalize;
         margin-bottom: 30px;
-        animation: alert .5s infinite;
     }
-
-    @include alert;
 
     input::placeholder {
         color:#f39c12;
@@ -56,4 +62,5 @@
     select::-ms-expand {
         display: none;
     }
+    
 }
