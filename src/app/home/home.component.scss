@@ -4,19 +4,12 @@
 .home {
     background: linear-gradient(rgba(50,50,50,1) 10%, rgba(187, 155, 113, 1));
     height: 100vh;
+    font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
-    font-family: 'Roboto', sans-serif;
-    align-items: center;
-    @include center;
-}
-
-// h1 {
+    justify-content: space-around;
     
-//     @include title-text;
-//     text-transform: uppercase;
-// }
-
+}
 
 .title{
     @include text-contain;
@@ -29,15 +22,12 @@
 }
 
 .pulse-button{
-    height: 275px;
     @include center;
 
     .shapes {
-        @include center;
         
         .circle1 {
             @include center;
-            margin: auto 0;
             width: 75px;
             height: 75px;
             border-radius: 50%;
@@ -58,7 +48,6 @@
 
 .footer{
     @include text-contain;
-    @include center;
 
     p {
         font-family: 'Roboto', sans-serif;

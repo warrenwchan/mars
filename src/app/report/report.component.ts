@@ -33,6 +33,7 @@ export class ReportComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		localStorage.setItem('test', 'tom')
 
 	}
 
@@ -43,6 +44,12 @@ export class ReportComponent implements OnInit {
 							});
 	}
 
+	  getEncounterDate() {
+		const today = new Date();
+	
+		return `${ today.getFullYear() }-${ today.getMonth() + 1 }-${ today.getDate() }`;
+		}; 
+
 	postNewEncounter(event) {
 		event.preventDefault();
 		if(this.reportForm.invalid) {
@@ -50,15 +57,15 @@ export class ReportComponent implements OnInit {
 			this.clickedButton = true;
 		} else {
 			const atype = this.reportForm.get('atype').value; 
-			const date = '2016-11-18';
-			const colonist_id = '4';
 			const action = this.reportForm.get('action').value;
-			const newEncounter: NewEncounter = new NewEncounter(atype, date, action, colonist_id);
+			const newEncounter: NewEncounter = new NewEncounter(atype, this.getEncounterDate(), action, localStorage.getItem('colonist_id'));
 			const encounterPostRequest = { encounter: newEncounter };
 
 			this.encounterApiService.saveEncounter( encounterPostRequest )
 									.subscribe((result) => {
-									console.log('Encoubnter Logged..', result)
+									console.log('Encoubnter Logged..', result);
+									
+									localStorage.setItem('colonist_id',result.id.toString()); 
 									this.router.navigate(['encounters']);
 			})
 			

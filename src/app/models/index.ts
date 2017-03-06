@@ -60,4 +60,3 @@ export interface Aliens {
     id: number;
     description: string;
 }
-

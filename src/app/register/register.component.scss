@@ -9,6 +9,9 @@
         animation: alert .5s infinite;
         @include alert;
     }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .title {

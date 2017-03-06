@@ -7,9 +7,27 @@ body {
     align-items: center;
     flex-direction: column;
     @include center;
+    display: flex;
+    justify-content: space-around;
 }
 
 h1 {
-    font-family: $main-font;
     @include title-text;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-family: $main-font;
+    color: lightgrey;
+}
+
+a{
+    font-size: 8rem;
+    margin: 20px;
+    text-decoration: none;
+}
+
+p{
+    font-family: $main-font;
+    font-weight: 100;
+    font-size: 1.5rem;
+    text-transform: capitalize;
 }

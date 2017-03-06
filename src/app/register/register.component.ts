@@ -17,6 +17,7 @@ export class RegisterComponent implements OnInit {
 	marsJobs: Job[];
 	registerForm: FormGroup;
 	clickedButton: boolean;
+	
 
 	constructor(
 		private colonistApiService: ColonistAPIService,
@@ -66,6 +67,7 @@ export class RegisterComponent implements OnInit {
 			this.colonistApiService.saveColonist({colonist: newColonist})
 									.subscribe((result) => {
 									console.log('Colonist Saved..', result);
+									window.localStorage.setItem('colonist_id',result.id.toString()); 
 									this.router.navigate(['encounters']);
 			})
 		}
