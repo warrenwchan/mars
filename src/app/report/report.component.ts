@@ -6,6 +6,8 @@ import { AlienAPIService } from '../apiService/aliens';
 import { EncounterAPIService } from '../apiService/encounters';
 import { Router } from '@angular/router';
 
+declare var localStorage: any;
+
 @Component({
 	selector: 'app-report',
 	templateUrl: './report.component.html',
