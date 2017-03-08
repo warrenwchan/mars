@@ -1,10 +1,9 @@
 <section>
-	<div class="title">
-		<h1>report encounter</h1>
-		<p>Safey on Mars is your responcibility</p>
-	</div>
-
 	<form [formGroup]="reportForm" class="report-form" [ngClass]="{'submitting': clickedButton}" (ngSubmit)="postNewEncounter($event)">
+		<div class="title">
+			<h1>report encounter</h1>
+			<p>Safey on Mars is your responcibility</p>
+		</div>
 		<fieldset class="alien-info">
 			<select formControlName="atype" name="atype">
 				<option value="">Select alien type</option>
