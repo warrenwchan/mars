@@ -1,11 +1,6 @@
-<div class="register">
-	<div class="title">
-		<p>register</p>
-	</div>
-
-	<form [formGroup]="registerForm" 
-			class="register-form"
-			(ngSubmit)="postNewColonist($event)">
+<section>
+	<form [formGroup]="registerForm" class="register-form" (ngSubmit)="postNewColonist($event)">
+		<h1>register</h1>
 		<fieldset class="select-options">
 			<input type="text" placeholder="Name" formControlName="name" name="colonistName"[ngClass]="{'submitting': clickedButton}">
 			<input type="number" placeholder="Age" formControlName="age" name="colonistAge"[ngClass]="{'submitting': clickedButton}">
@@ -14,8 +9,6 @@
 				<option *ngFor="let job of marsJobs" value="{{job.id}}">{{job.name}}</option>
 			</select>
 		</fieldset>
-		<fieldset class="title">
-			<button>Check In</button>
-		</fieldset>
+		<button>Check In</button>
 	</form>
-</div>
+</section>

@@ -1,13 +1,10 @@
-<div class="report">
+<section>
 	<div class="title">
 		<h1>report encounter</h1>
 		<p>Safey on Mars is your responcibility</p>
 	</div>
 
-	<form [formGroup]="reportForm" 
-			class="report-form"
-			[ngClass]="{'submitting': clickedButton}"
-			(ngSubmit)="postNewEncounter($event)">
+	<form [formGroup]="reportForm" class="report-form" [ngClass]="{'submitting': clickedButton}" (ngSubmit)="postNewEncounter($event)">
 		<fieldset class="alien-info">
 			<select formControlName="atype" name="atype">
 				<option value="">Select alien type</option>
@@ -15,8 +12,6 @@
 			</select>
 			<textarea placeholder="Action Taken.." rows="15" cols="50" formControlName="action" name="action"></textarea>
 		</fieldset>
-		<fieldset class="title">
-			<button>Submit report</button>
-		</fieldset>
+		<button>Submit report</button>
 	</form>
-</div>
+</section>

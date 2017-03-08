@@ -1,28 +1,16 @@
 @import "../_mixin";
 @import "../_variables";
-
-body {
-    height: 100vh;
-    background: linear-gradient(rgba(50,50,50,1) 10%, rgba(187, 155, 113, 1));
-    align-items: center;
-    flex-direction: column;
-    @include center;
-    display: flex;
-    justify-content: space-around;
-}
+@import "../app.component";
 
 h1 {
-    @include title-text;
     font-weight: 500;
-    text-transform: uppercase;
-    font-family: $main-font;
-    color: lightgrey;
 }
 
 a{
-    font-size: 8rem;
+    font-size: 10rem;
     margin: 20px;
     text-decoration: none;
+    @include shake;
 }
 
 p{

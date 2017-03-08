@@ -1,15 +1,15 @@
-.page-template {
+@import "_mixin";
+@import "_variables";
+
+section {
     height: 100vh;
-    width: 100vw;
-    background-color: black;
+    font-family: $main-font;
+    @include fade-in;
+    @include even-center;
+}
 
-    :required {
-        animation: required .5s infinite;
-    }
-
-    @keyframes required {
-        0% { box-shadow: 0px 0px 0px 0px rgba(255,0,0,1); }
-        100% { box-shadow: 0px 0px 0px 12px rgba(255,0,0,0); }
-    }
+h1{
+    @include title-text;
+    text-transform: uppercase;
 }
 

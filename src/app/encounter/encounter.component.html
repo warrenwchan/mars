@@ -1,17 +1,16 @@
-<div class="encounter">
+<section>
   <div class="title">
-    <p>recent encounters</p>
-    <h3>see an alien.. report it.</h3>
+    <h1>recent encounters</h1>
+    <p>see an alien.. report it.</p>
   </div>
 
   <div class="encounter-page">
-    <ul class="encounter-list">
+    <ul>
       <li *ngFor="let encount of encounter">{{encount.date}} {{encount.atype}} {{encount.action}}</li>
     </ul>
   </div>
 
-  <div class="footer">
-    <a routerLink="/report" class="report-link"> Report Encounter </a>
-  </div>
-</div>
+<a routerLink="/report" class="report-link"> Report Encounter </a>
+
+</section>
 

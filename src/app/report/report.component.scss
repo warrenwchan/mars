@@ -1,72 +1,55 @@
 @import "../_mixin";
 @import "../_variables";
+@import "../app.component";
 
-.report {
-    height: 100vh;
-    background: linear-gradient(rgba(50,50,50,1) 10%, rgba(187, 155, 113, 1));
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+.submitting .ng-invalid {
+    animation: alert .5s infinite;
+    @include alert;
+}
 
-
-    .title {
-        flex-direction: column;
-        line-height: 1.2;
-        @include center;
-        @include text-contain;
-        
-        h1 {
-            @include title-text;
-        }
-
-        p {
-            @extend h1;
-            font-size: 1.5rem;
-        }
-
-        button {
-            text-decoration: none;
-            color: white;
-            margin: 0 auto;
-            @include title-text;
-        }
-    }
-
-    form{
-        width: 90%;
-    }
-
-    .alien-info {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-
-        select {
-            width: 100%;
-            margin-bottom: 20px;
-            @include dropdown;
-            -webkit-appearance: none;
-        }
-
-        textarea {
-            width: 100%;
-            margin-bottom: 20px;
-            color: white;
-            font-size: 1.3rem;
-            resize: none;
-            background: rgba(50,50,50,.2);
-            border: none;
-
-        }
-        ::placeholder {
-            font-size: 1.3rem;
-            
-        }
-    }
+.title {
+    line-height: 1.2;
+    @include even-center;
+    @include text-contain;
     
-    .submitting .ng-invalid {
-        animation: alert .5s infinite;
-        @include alert;
+    p {
+        font-weight: 100;
+        font-size: 1.5rem;
+        text-transform: capitalize;
+    }  
+}
+
+form{
+    width: 90%;
+    @include even-center;
+}
+
+.alien-info {
+    height: 350px;
+    
+    select {
+        width: 100%;
+        margin-bottom: 20px;
+        @include dropdown;
+        -webkit-appearance: none;
     }
+    textarea {
+        width: 100%;
+        margin-bottom: 20px;
+        color: $second-color;
+        font-size: 1.3rem;
+        resize: none;
+        background: rgba(50,50,50,.2);
+        border: none;
+    }
+    ::placeholder {
+        font-size: 1.3rem;
+        
+    }
+}
+
+button {
+    text-decoration: none;
+    @include button;
+    @include title-text;
 }

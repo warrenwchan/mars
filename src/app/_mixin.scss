@@ -1,8 +1,10 @@
 @import "_variables";
 
-@mixin center {
+@mixin even-center {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 @mixin text-contain {
@@ -16,12 +18,24 @@
     text-transform: capitalize;
 }
 
+@mixin gradient {
+    height: 100vh;
+    background: linear-gradient(rgba(50,50,50,1) 10%, rgba(187, 155, 113, 1));
+}
+
+@mixin button {
+    color: $second-color;
+    background-color: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.06);
+    padding: 5px 40px;
+}
+
 @mixin dropdown{
     height: 30px;
     border: none;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid $second-color;
     background: 0 0;
-    color: #f39c12;
+    color: $prime-color;
     font-size: 1.5rem;
     text-transform: capitalize;
     border-radius: 0;
@@ -29,7 +43,37 @@
 
 @mixin alert {
      @keyframes alert {
-        0% { box-shadow: 0px 0px 0px 0px rgba(81, 157, 158, .5); }
+        0% { box-shadow: 0px 0px 0px 0px rgba(26, 188, 156,0.5); }
         100% { box-shadow: 0px 0px 0px 15px rgba(255,0,0,0); }
      }
+}
+
+@mixin fade-in {
+    animation: home 1s;
+    transition: all .5s ease;
+    @keyframes home {
+        0% { transform: scale(5,5); opacity: 0; }
+        100% { transform: scale(); opacity: 1; }
+    }
+}
+
+@mixin shake {
+    animation: shake 1s;
+    @keyframes shake {
+        10%, 90% {
+            transform: translate3d(-1px, 0, 0);
+        }
+        
+        20%, 80% {
+            transform: translate3d(2px, 0, 0);
+        }
+
+        30%, 50%, 70% {
+            transform: translate3d(-4px, 0, 0);
+        }
+
+        40%, 60% {
+            transform: translate3d(4px, 0, 0);
+        }
+    }
 }

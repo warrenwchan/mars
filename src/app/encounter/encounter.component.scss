@@ -1,51 +1,32 @@
 @import "../_mixin";
 @import "../_variables";
+@import "../app.component";
 
-.encounter {
-    height: 100vh;
-    background: linear-gradient(rgba(50,50,50,1) 10%, rgba(187, 155, 113, 1));
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-
-    .title {
-        @include text-contain;
-        text-align: center;
-
-        p {
-            @include title-text;
-        }
-
-        h3 {
-            font-weight: 100;
-            font-size: 1.5rem;
-            text-transform: capitalize;
-        }
-    }
-    .encounter-page {
-        padding: 20px;
-        height: 370px;
-        overflow-y: scroll;
-        font-family: $main-font;
-        font-size: 1.5rem;
+.title {
+    text-align: center;
+    
+    p {
         font-weight: 100;
-        background: rgba(50,50,50,.2);
-
-        li{
-            padding-bottom: 20px;
-        }
-    }
-    .footer {
-        .report-link {
-            text-align: center;
-            text-decoration: none;
-            color: white;
-            padding: 10px;
-            background: rgba(50,50,50,.1);
-            @include title-text;
-            @extend .title;
-            
-        }
+        font-size: 1.5rem;
+        text-transform: capitalize;
     }
 }
+.encounter-page {
+    height: 370px;
+    font-family: $main-font;
+    font-size: 1.5rem;
+    font-weight: 100;
+    padding: 20px;
+    overflow-y: scroll;
+    
+    li{
+        padding-bottom: 20px;
+    }
+}
+    
+a {
+    text-decoration: none;
+    @include button;
+    @include title-text;
+}
+    

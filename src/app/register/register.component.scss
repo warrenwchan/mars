@@ -1,63 +1,50 @@
 @import "../_mixin";
 @import "../_variables";
+@import "../app.component";
 
-.register {
+.submitting.ng-invalid {
+    animation: alert .5s infinite;
+    @include alert;
+}
+
+form {
     height: 100vh;
-    background: linear-gradient(rgba(50,50,50,1) 10%, rgba(187, 155, 113, 1));
-
-    .submitting.ng-invalid{
-        animation: alert .5s infinite;
-        @include alert;
-    }
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    @include even-center;
 }
 
-.title {
-    @include text-contain;
-    @include center;
-
-    p{
-        @include title-text;
-
-    }
-    button {
-        @extend p;
-        text-decoration: none;
-        color: white;
-        margin: 0 auto;
-    }
-    a{
-        color: white;
-        text-decoration: none;
-    }
-}
 
 .select-options {
-    height: 170px;
-    padding: 0 40px;
-    padding-bottom: 100px;
-    
+    width: 90%;
     
     input {
         width: 100%;
         border: none;
-        border-bottom: 1px solid white;
+        border-bottom: 1px solid $second-color;
         background: 0 0;
         height: 30px;
-        color: lightgrey;
+        color: $second-color;
         font-size: 1.5rem;
         text-transform: capitalize;
         margin-bottom: 30px;
     }
 
     input::placeholder {
-        color:#f39c12;
+        color: $prime-color;
+    }
+
+    input:focus{
+        outline: none;
+    }
+
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+        -webkit-appearance: none; 
+        margin: 0; 
     }
 
     select {
         width: 100%;
+        color: $second-color;
         -webkit-appearance: none;
         @include dropdown;
     }
@@ -65,5 +52,14 @@
     select::-ms-expand {
         display: none;
     }
-    
+
+    select:focus{
+        outline: none;
+    }
+}
+
+button {
+    text-decoration: none;
+    @include button;
+    @include title-text;
 }
